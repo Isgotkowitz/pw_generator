@@ -30,6 +30,6 @@ for i in range(6):
         print("Error: ", e)
         exit()
 
-print("Your newest password: " + new_password)
+print("Your newest password: \n\n" + new_password + "\n")
 
 client.close()
