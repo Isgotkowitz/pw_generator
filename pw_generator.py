@@ -13,7 +13,11 @@ class Password(Document):
 
 secure_rng = secrets.SystemRandom()
 
-client = connect('Passwords', host='mongo-container', port=27017)
+# Client creation when running pw_generator inside a Docker container
+# The mongodb that it connects to is inside another Docker container called
+# 'mongo-container'
+#client = connect('Passwords', host='mongo-container', port=27017)
+client = connect('Passwords', host='localhost', port=27017)
 
 new_password = ''
 for i in range(6):
